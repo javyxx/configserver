@@ -1,0 +1,88 @@
+server:
+   port: 8082
+   tomcat:
+      uri-encoding: UTF-8   
+security:
+   basic:
+      enabled: false
+token:
+   secret: 9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
+logging:
+   path: log
+spring.jpa.show-sql: true
+spring:
+   application:
+     name: userService
+   data:
+      mongodb:
+         host: 127.0.0.1
+         port: 27017
+         database: arquitecture
+         username: arquitectureapp
+         password: arquitectureapp
+   datasource: 
+      driverClassName: com.mongodb.Mongo
+   rabbitmq:
+      host: docker-1
+      port: 5672
+arquitecture:
+   security:
+      authentication:
+          accessToken:
+             secret: 9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
+             storeUserInToken: false
+          oauth:
+                clientid: arquitectureapp
+                secret: mySecretOAuthSecret
+                # Token is valid 30 minutes
+                tokenValidityInSeconds: 1800
+   data:
+      mongodb:
+         host: 127.0.0.1
+         port: 27017
+         database: arquitecture
+         username: arquitectureapp
+         password: arquitectureapp
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+---
+spring:
+   profiles: docker
+   application:
+     name: userService
+   data:
+      mongodb:
+         host: mongodb
+         port: 27017
+         database: arquitecture
+         username: arquitectureapp
+         password: arquitectureapp
+   datasource: 
+      driverClassName: com.mongodb.Mongo
+   rabbitmq:
+      host: rabbitmq
+      port: 5672
+arquitecture:
+   security:
+      authentication:
+          accessToken:
+             secret: 9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
+             storeUserInToken: false
+          oauth:
+                clientid: arquitectureapp
+                secret: mySecretOAuthSecret
+                # Token is valid 30 minutes
+                tokenValidityInSeconds: 1800
+   data:
+      mongodb:
+         host: mongodb
+         port: 27017
+         database: arquitecture
+         username: arquitectureapp
+         password: arquitectureapp
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
