@@ -16,7 +16,7 @@ spring:
      name: userService
    data:
       mongodb:
-         host: mongodb
+         host: 192.168.99.100
          port: 27017
          database: arquitecture
          username: arquitectureapp
@@ -24,7 +24,7 @@ spring:
    datasource: 
       driverClassName: com.mongodb.Mongo
    rabbitmq:
-      host: rabbitmq
+      host: 192.168.99.100
       port: 5672
 arquitecture:
    security:
@@ -39,7 +39,7 @@ arquitecture:
                 tokenValidityInSeconds: 1800
    data:
       mongodb:
-         host: mongodb
+         host: 192.168.99.100
          port: 27017
          database: arquitecture
          username: arquitectureapp
