@@ -13,7 +13,7 @@ spring.jpa.show-sql: true
 spring:
    data:
       mongodb:
-         host: 192.168.99.100
+         host: mongodb
          port: 27017
          database: arquitecture
          username: arquitectureapp
@@ -21,7 +21,7 @@ spring:
    datasource: 
       driverClassName: com.mongodb.Mongo
    rabbitmq:
-      host: 192.168.99.100
+      host: rabbitmq
       port: 5672
 arquitecture:
    security:
@@ -36,7 +36,7 @@ arquitecture:
                 tokenValidityInSeconds: 1800
    data:
       mongodb:
-         host: 192.168.99.100
+         host: mongodb
          port: 27017
          database: arquitecture
          username: arquitectureapp
@@ -44,5 +44,5 @@ arquitecture:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka:8761/eureka/
 foo: prueba
