@@ -39,6 +39,18 @@ var user = {"_id" : "11",
 	                    "allowAll" : true,
 	                    "ownEntities" : true
 	                },
+			        {
+	                    "resource" : "user",
+	                    "method" : "delete",
+	                    "allowIds" : [ 
+	                        "1"
+	                    ],
+	                    "denyIds" : [ 
+	                        "5"
+	                    ],
+	                    "allowAll" : true,
+	                    "ownEntities" : true
+	                },
 	                {
 	                    "resource" : "product",
 	                    "method" : "read",
